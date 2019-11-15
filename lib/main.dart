@@ -13,7 +13,12 @@ class MyApp extends StatelessWidget {
         backgroundColor: Colors.red,
         appBar: AppBar(
           backgroundColor: Colors.red[900],
-          title: Text('Dicee Game'),
+          title: Text(
+            'Dicee Game',
+            style: TextStyle(
+              fontFamily: 'Pacifico',
+            ),
+          ),
         ),
         body: DiceeApp(),
       ),
