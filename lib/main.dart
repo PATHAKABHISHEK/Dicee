@@ -29,6 +29,14 @@ class DiceeApp extends StatefulWidget {
 class _DiceeAppState extends State<DiceeApp> {
   int leftImageNumber = Random().nextInt(5) + 1;
   int rightImageNumber = Random().nextInt(5) + 1;
+
+  void changeImage() {
+    setState(() {
+      leftImageNumber = Random().nextInt(5) + 1;
+      rightImageNumber = Random().nextInt(5) + 1;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -38,10 +46,7 @@ class _DiceeAppState extends State<DiceeApp> {
             Expanded(
               child: FlatButton(
                 onPressed: () {
-                  setState(() {
-                    leftImageNumber = Random().nextInt(5) + 1;
-                    rightImageNumber = Random().nextInt(5) + 1;
-                  });
+                  changeImage();
                 },
                 child: Image.asset('images/dice$leftImageNumber.png'),
               ),
@@ -49,10 +54,7 @@ class _DiceeAppState extends State<DiceeApp> {
             Expanded(
               child: FlatButton(
                 onPressed: () {
-                  setState(() {
-                    leftImageNumber = Random().nextInt(5) + 1;
-                    rightImageNumber = Random().nextInt(5) + 1;
-                  });
+                  changeImage();
                 },
                 child: Image.asset('images/dice$rightImageNumber.png'),
               ),
