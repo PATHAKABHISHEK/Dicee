@@ -26,6 +26,8 @@ class DiceeApp extends StatefulWidget {
 }
 
 class _DiceeAppState extends State<DiceeApp> {
+  int leftImageNumber = 1;
+  int rightImageNumber = 1;
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -35,17 +37,23 @@ class _DiceeAppState extends State<DiceeApp> {
             Expanded(
               child: FlatButton(
                 onPressed: () {
-                  print('Left Button Clicked!');
+                  setState(() {
+                    leftImageNumber = 5;
+                    rightImageNumber = 3;
+                  });
                 },
-                child: Image.asset('images/dice1.png'),
+                child: Image.asset('images/dice$leftImageNumber.png'),
               ),
             ),
             Expanded(
               child: FlatButton(
                 onPressed: () {
-                  print('Right Button Clicked!');
+                  setState(() {
+                    leftImageNumber = 4;
+                    rightImageNumber = 5;
+                  });
                 },
-                child: Image.asset('images/dice1.png'),
+                child: Image.asset('images/dice$rightImageNumber.png'),
               ),
             )
           ],
