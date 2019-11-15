@@ -28,6 +28,29 @@ class DiceeApp extends StatefulWidget {
 class _DiceeAppState extends State<DiceeApp> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Center(
+      child: Container(
+        child: Row(
+          children: <Widget>[
+            Expanded(
+              child: FlatButton(
+                onPressed: () {
+                  print('Left Button Clicked!');
+                },
+                child: Image.asset('images/dice1.png'),
+              ),
+            ),
+            Expanded(
+              child: FlatButton(
+                onPressed: () {
+                  print('Right Button Clicked!');
+                },
+                child: Image.asset('images/dice1.png'),
+              ),
+            )
+          ],
+        ),
+      ),
+    );
   }
 }
